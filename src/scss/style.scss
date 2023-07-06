@@ -1,0 +1,26 @@
+@import 'reset.scss';
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'mixins.scss';
+
+
+
+body {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.75;
+	line-height: 28px;
+	font-family: 'DINPro', sans-serif;
+	color: $black;
+	background-color: $white;
+}
+
+.container {
+	max-width: 1228px;
+	margin: 0 auto;
+	padding: 0 4px;
+}
+
+
+
+@import "media.scss";
