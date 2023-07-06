@@ -13,4 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
 			headerNav.classList.remove('active');
 		}
 	});
+
+	const introSwiper = new Swiper('.intro__swiper', {
+		speed: 400,
+		// spaceBetween: 100,
+		loop: true,
+		autoplay: {
+			delay: 2000,
+		},
+		pagination: {
+				el: '.intro-slide__navigation',
+				clickable: true
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		}
+	});
 });
