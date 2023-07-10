@@ -23,10 +23,19 @@
 	// }
 	.intro {
 		&__left {
-			margin-right: 30px;
+			// margin-right: 30px;
+			width: 50.4%;
+		}
+		&__right {
+			height: 100%;
 		}
 		&__swiper {
 			box-shadow: none;
+		}
+	}
+	.our-service {
+		&__head {
+			width: 100%;
 		}
 	}
 }
@@ -76,6 +85,11 @@
 			}
 		}
 	}
+	.our-service {
+		&__item {
+			width: 50%;
+		}
+	}
 }
 
 @media(max-width: 660px) {
@@ -92,6 +106,7 @@
 	}
 	.intro {
 		padding-top: 40px;
+		padding-bottom: 0;
 		&__inner {
 			display: block;
 		}
@@ -101,11 +116,26 @@
 		&__left {
 			margin-bottom: 40px;
 		}
+		&__right {
+			position: static;
+			// background-color: $cyan;
+		}
+		&__swiper {
+			background: #C4C4C4;
+			box-shadow: -10px 20px 0px 0px #F7F8FA, 0px 10px 50px 0px rgba(0, 0, 0, 0.20);
+		}
 		&__text {
 			max-width: none;
 			margin-bottom: 22px;
 		}
 		&__btn {
+			margin-bottom: 50px;
+		}
+	}
+	.our-service {
+		padding-top: 171px;
+		transform: translateY(-102px);
+		&__head {
 			margin-bottom: 50px;
 		}
 	}
@@ -116,10 +146,44 @@
 }
 
 @media(max-width: 480px) {
-    
+	.our-service {
+		&__items {
+			&-without-img {
+				margin-bottom: 0;
+				.our-service__item {
+					padding-bottom: 22px;
+					margin-bottom: 12px;
+					border-bottom: 1px solid $gray2;
+					&:last-child {
+						padding-bottom: 0;
+						border-bottom: none;
+					}
+				}
+			}
+		}
+		&__item {
+			width: 100%;
+			max-width: none;
+			margin-bottom: 52px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&-img {
+				width: 100%;
+			}
+		}
+		&__line {
+			margin: 22px 0 12px;
+		}
+	}
 }
 
 @media(max-width: 380px) {
+	.section {
+		&__text {
+			margin-bottom: 22px;
+		}
+	}
 	.header {
 		&__left {
 			margin-bottom: 20px;
@@ -129,7 +193,7 @@
 		}
 		&__info {
 			display: flex;
-			align-items: center;
+			align-items: start;
 			justify-content: space-between;
 			&-phone, &-email {
 				padding-left: 19px;
@@ -144,6 +208,11 @@
 	// 		margin-bottom: 50px;
 	// 	}
 	// }
+	.intro {
+		&__swiper {
+			box-shadow: -10px 20px 0px 0px #F7F8FA, 0px 10px 50px 0px rgba(0, 0, 0, 0.20);
+		}
+	}
 }
 
 @media(max-width: 340px) {

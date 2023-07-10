@@ -30,4 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			prevEl: '.swiper-button-prev',
 		}
 	});
+
+	/*ACCORDEON*/
+	const accordeonBtns = document.querySelectorAll('.tab-btn');
+
+	accordeonBtns.forEach(accordeonBtn => {
+		accordeonBtn.addEventListener('click', () => {
+			if(!accordeonBtn.nextElementSibling.classList.contains('active')) {
+				accordeonBtn.classList.add('active');
+				accordeonBtn.nextElementSibling.classList.add('active');
+				accordeonBtn.nextElementSibling.style.maxHeight = `${accordeonBtn.nextElementSibling.scrollHeight}px`;
+			} else {
+				accordeonBtn.classList.remove('active');
+				accordeonBtn.nextElementSibling.classList.remove('active');
+				accordeonBtn.nextElementSibling.style.maxHeight = '0px';
+			}
+		});
+	});
+	/*ACCORDEON*/
 });
