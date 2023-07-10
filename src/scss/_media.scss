@@ -105,6 +105,13 @@
 			padding: 0 17px;
 		}
 	}
+	.footer {
+		&__top {
+			&-right {
+				width: auto;
+			}
+		}
+	}
 }
 
 @media(max-width: 768px) {
@@ -244,7 +251,23 @@
 }
 
 @media(max-width: 576px) {
-
+	.footer {
+		transform: translateY(-102px);
+		&__top {
+			display: block;
+			padding: 70px 0 54px;
+		}
+		&__bottom {
+			padding: 40px 0 60px;
+		}
+		&__logo {
+			text-align: center;
+			margin-bottom: 32px;
+		}
+		&__copyright {
+			text-align: center;
+		}
+	}
 }
 
 @media(max-width: 480px) {

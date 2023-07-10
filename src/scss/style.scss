@@ -651,5 +651,53 @@ body {
 }
 /* OUR-CONTACTS */
 
+/* FOOTER */
+.footer {
+	background-color: $black;
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 52px 0 60px;
+		&-left {}
+		&-right {
+			width: 33.4%;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__bottom {
+		border-top: 1px solid rgba(255,255,255,0.2);
+		padding: 40px 0 53px;
+	}
+	&__phones, &__emails {
+		&-title {
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 1.42;
+			letter-spacing: 1.4px;
+			text-transform: uppercase;
+			color: $white;
+			margin-bottom: 8px;
+		}
+		&-link {
+			display: block;
+			color: $white;
+			margin-bottom: 5px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__phones {
+		margin-right: 25px;
+	}
+	&__copyright {
+		font-size: 14px;
+		color: rgba(255,255,255,.5);
+	}
+}
+/* FOOTER */
+
 
 @import "media.scss";
