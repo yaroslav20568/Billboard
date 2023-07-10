@@ -43,12 +43,13 @@ body {
 		margin-bottom: 22px;
 		p {
 			color: $gray;
-			line-height: 1.75;
+			// line-height: 1.75;
 		}
 	}
 }
 .btn--orange {
 	display: inline-block;
+	min-width: 300px;
 	background-color: $orange;
 	padding: 18px 114px 21px 20px;
 	font-size: 16px;
@@ -513,6 +514,7 @@ body {
 .our-amenities {
 	// transform: translateY(-346px);
 	background: linear-gradient(0deg, transparent 55%, $cyan 45%);
+	padding-bottom: 130px;
 	&__inner {
 		display: flex;
 		position: relative;
@@ -589,6 +591,42 @@ body {
 	}
 }
 /* OUR-AMENITIES */
+
+/* OUR-PARTNERS */
+.our-partners {
+	&__title {
+		margin-bottom: 2px;
+	}
+	&__head {
+		&-inner {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 72px;
+		}
+	}
+	&__text {
+		max-width: 591px;
+		color: $gray;
+		margin-right: 20px;
+	}
+	&__links {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin-bottom: -36px;
+	}
+	&__link {
+		// width: 20%;
+		// text-align: center;
+		display: block;
+		margin-bottom: 36px;
+		&-img {
+			max-width: 100%;
+		}
+	}
+}
+/* OUR-PARTNERS */
 
 
 @import "media.scss";
