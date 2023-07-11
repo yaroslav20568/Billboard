@@ -48,4 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 	/*ACCORDEON*/
+
+	/*MODALS*/
+	const introBtn = document.querySelector('.intro__btn');
+
+	introBtn.addEventListener('click', () => {
+		document.querySelector('.call-modal').classList.add('modal--active');
+	});
+	/*MODALS*/
 });
