@@ -36,7 +36,7 @@
 			width: 22%;
 		}
 	}
-	.catalog {
+	.catalog, .vacancies {
 		&__left {
 			margin-right: 50px;
 		}
@@ -204,6 +204,31 @@
 	.breadcrumbs {
 		padding: 29px 0;
 		margin-bottom: 9px;
+	}
+	.vacancies {
+		&__inner {
+			display: block;
+		}
+		&__left {
+			max-width: none;
+			margin-right: 0;
+			margin-bottom: 43px;
+			&-title {
+				margin-bottom: 14px;
+			}
+		}
+		&__right {
+			width: 100%;
+			&-title {
+				margin-bottom: 24px;
+			}
+		}
+		// &__accordeon {
+		// 	margin-bottom: 6px;
+		// 	&:last-child {
+		// 		margin-bottom: 0;
+		// 	}
+		// }
 	}
 }
 
@@ -493,6 +518,16 @@
 	.catalog {
 		&__left-title {
 			margin-bottom: 2px;
+		}
+	}
+	.vacancies {
+		&__accordeon {
+			&-info {
+				padding: 14px 0 14px 22px;
+			}
+			&-order-btn {
+				margin-top: 13px;
+			}
 		}
 	}
 }

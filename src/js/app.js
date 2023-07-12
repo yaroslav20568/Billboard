@@ -80,4 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 	});
 	/*MODALS*/
+
+	/* ACCORDEONS */
+	const accordeonVacanciesBtns = document.querySelectorAll('.vacancies__accordeon-btn');
+
+	accordeonVacanciesBtns.forEach(accordeonBtn => {
+		accordeonBtn.addEventListener('click', () => {
+			if(!accordeonBtn.parentElement.classList.contains('active')) {
+				accordeonBtn.parentElement.classList.add('active');
+				accordeonBtn.nextElementSibling.style.maxHeight = `${accordeonBtn.nextElementSibling.scrollHeight + 15}px`;
+			} else {
+				accordeonBtn.parentElement.classList.remove('active');
+				accordeonBtn.nextElementSibling.style.maxHeight = '0px';
+			}
+		});
+	});
+	/* ACCORDEONS */
 });

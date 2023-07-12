@@ -492,9 +492,9 @@ body {
 		}
 	}
 	&__tab {
-		&-btn {
-			margin-bottom: 2px;
-		}
+		// &-btn {
+		// 	margin-bottom: 2px;
+		// }
 		&-text {
 			p {
 				line-height: 160%;
@@ -1121,6 +1121,238 @@ body {
 		transform: none;
 	}
 }
+
+/* VACANCIES */
+.vacancies {
+	&__inner {
+		display: flex;
+	}
+	&__left {
+		max-width: 300px;
+    margin-right: 116px;
+	}
+	&__right {
+		// max-width: 800px;
+		width: 65.57%;
+	}
+	&__left-title {
+		margin-bottom: 12px;
+	}
+	&__left-title-first {
+	}
+	&__left-text {
+	}
+	&__left-btn {
+	}
+	&__right-title {
+		margin-bottom: 12px;
+	}
+	&__accordeons {
+		margin-bottom: 40px;
+	}
+	&__accordeon {
+		margin-bottom: 6px;
+		&-btn {
+			font-weight: 500;
+			line-height: 1.5;
+			background-color: #F4F8F9;
+			padding: 14px 0 14px 13px;
+			position: relative;
+			cursor: pointer;
+			transition: .3s linear background-color;
+			// &.active {
+			// 	background-color: #F1F3F4;
+			// }
+			&::after {
+				content: "";
+				display: block;
+				width: 8px;
+				height: 12px;
+				background-image: url('@img/general/arrow-right-black.svg');
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				right: 20px;
+				transition: .3s linear transform;
+			}
+			// &.active {
+			// 	&::after {
+			// 		transform: translateY(-50%) rotate(90deg);
+			// 	}
+			// }
+		}
+		&-content {
+			background-color: #F1F3F4;
+			// padding: 20px 34px 15px;
+			max-height: 0;
+			opacity: 0;
+			transition: 0.3s linear max-height, 0.3s linear opacity;
+		}
+		&-info, &-responsibilities, &-requirements, &-conditions {
+			margin-bottom: 32px;
+		}
+		&-info {
+			padding: 14px 0 14px 42px;
+			position: relative;
+			// margin-bottom: 32px;
+			&::before {
+				content: "";
+				display: block;
+				height: 100%;
+				width: 2px;
+				background-color: $gray2;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		&-info {
+			&-item {
+				margin-bottom: 28px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&-title {
+				font-size: 24px;
+				font-weight: 700;
+				line-height: normal;
+				margin-bottom: 7px;
+			}
+			&-subtitle {
+				color: $gray2;
+				font-weight: 500;
+				line-height: normal;
+			}
+		}
+		&-responsibilities, &-requirements, &-conditions {
+			&-title {
+				font-size: 27px;
+				font-weight: 500;
+				line-height: normal;
+				margin-bottom: 11px;
+			}
+			&-items {
+			}
+			&-item {
+				font-weight: 500;
+				color: $gray2;
+				padding-left: 41px;
+				position: relative;
+				&::before {
+					content: "";
+					display: block;
+					width: 9px;
+					height: 9px;
+					background-color: $black;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+					border-radius: 100%;
+				}
+			}
+		}
+		&-order-btn {
+			font-size: 16px;
+			font-weight: 500;
+			color: $orange;
+			position: relative;
+			padding-right: 33px;
+			line-height: 1.75;
+			&::after {
+				content: "";
+				display: block;
+				width: 8px;
+				height: 12px;
+				background-image: url('@img/general/arrow-right-orange.svg');
+				position: absolute;
+				right: 8px;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: 0.3s linear transform;
+			}
+		}
+		&.active {
+			.vacancies__accordeon-btn {
+				background-color: #F1F3F4;
+				&::after {
+					transform: translateY(-50%) rotate(90deg);
+				}
+			}
+			.vacancies__accordeon-content {
+				opacity: 1;
+				padding: 20px 34px 15px;
+			}
+		}
+	}
+	&__pagination {
+		&-inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&-prev, &-btn, &-delimiter, &-next {
+			min-width: 32px;
+			height: 32px;
+			padding: 5px 4px;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 1.428;
+			color: $black;
+			border-radius: 4px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 8px;
+			border: 1px solid #fff;
+			&:last-child {
+				margin-right: 0;
+			}
+			transition: .3s linear background-color, .3s linear border;
+		}
+		&-prev, &-btn, &-next {
+			&:hover {
+				background-color: #F4F8F9;
+				border: 1px solid #F4F8F9;
+			}
+		}
+		&-prev, &-next {
+			position: relative;
+			&::before {
+				content: "";
+				display: block;
+				width: 8px;
+				height: 12px;
+				position: absolute;
+				right: 21px;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0);
+			}
+		}
+		&-prev {
+			&::before {
+				background-image: url('@img/general/arrow-left-gray.svg');
+			}
+		}
+		&-btn {
+			&.current {
+				background-color: #F4F8F9;
+				border: 1px solid #F4F8F9;
+				pointer-events: none;
+			}
+		}
+		&-delimiter {
+		}
+		&-next {
+			&::before {
+				background-image: url('@img/general/arrow-right-black.svg');
+			}
+		}
+	}
+}
+/* VACANCIES */
 
 
 @import "media.scss";
