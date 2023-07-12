@@ -51,9 +51,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	/*MODALS*/
 	const introBtn = document.querySelector('.intro__btn');
+	const modal = document.querySelector('.call-modal');
+	const closeBtns = document.querySelectorAll('.modal__close');
 
-	introBtn.addEventListener('click', () => {
-		document.querySelector('.call-modal').classList.add('modal--active');
+	introBtn?.addEventListener('click', () => {
+		modal.classList.add('modal--active');
+		document.body.style.overflow = 'hidden';
+	});
+
+	// modalBtns.forEach(modalBtn => {
+	// 		modalBtn.addEventListener('click', () => {
+	// 				modal.classList.add('modal--active');
+	// 				document.body.style.overflow = 'hidden';
+	// 		});
+	// });
+
+	closeBtns.forEach((closeBtn) => {
+		closeBtn.addEventListener('click', () => {
+			modal.classList.remove('modal--active');
+			document.body.style.overflow = 'auto';
+		});
+	});
+
+	modal.addEventListener('click', (e) => {
+			if (e.target.parentElement === modal) {
+					modal.classList.remove('modal--active');
+					document.body.style.overflow = 'auto';
+			}
 	});
 	/*MODALS*/
 });
