@@ -96,4 +96,93 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 	/* ACCORDEONS */
+
+	/* CUSTOM */
+	const selectCustomInit = (widgetClassName) => {
+		const selectOptions = document.querySelectorAll(`.${widgetClassName} .constructions__real-select option`);
+		const selectBtn = document.querySelector(`.${widgetClassName} .constructions__custom-select`);
+		const widget = document.querySelector(`.${widgetClassName}.constructions__left-widget`);
+		const rootItems = document.querySelector(`.${widgetClassName} .constructions__custom-items`);
+		let allCount = 0;
+
+		const optionNames = [];
+		selectOptions.forEach((selectOption) => {
+			optionNames.push({city: selectOption.textContent, count: selectOption.getAttribute('data-count')});
+			allCount += +selectOption.getAttribute('data-count');
+		});
+
+		optionNames.forEach((optionName, index) => {
+			if(index === 0) {
+				rootItems.innerHTML +=`
+					<div class="constructions__custom-default">${optionName.city}</div>
+				`;
+			} else {
+				rootItems.innerHTML += `
+					<div class="constructions__custom-item">
+						<div class="constructions__custom-item-inner">
+							<h6 class="constructions__custom-item-title">${optionName.city}</h6>
+							<div class="constructions__custom-item-count">${optionName.count}</div>
+						</div>
+					</div>
+				`;
+			}
+		});
+
+		document.querySelector(`.${widgetClassName} .constructions__custom-select-count`).textContent = allCount;
+		selectBtn.addEventListener('click', () => {
+			if(!selectBtn.parentElement.classList.contains('active')) {
+				selectBtn.parentElement.classList.add('active');
+			} else {
+				selectBtn.parentElement.classList.remove('active');
+			}
+		});
+
+		document.body.addEventListener('click', (e) => {
+			if(!e.composedPath().includes(widget)) {
+				widget.classList.remove('active');
+			}
+		});
+
+		const selectCustomItems = document.querySelectorAll(`.${widgetClassName} .constructions__custom-default, .${widgetClassName} .constructions__custom-item`);
+
+		selectCustomItems.forEach((selectCustomItem, index) => {
+			selectCustomItem.addEventListener('click', () => {
+				if(index === 0) {
+					widget.classList.remove('active');
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-city`).textContent = document.querySelector(`.${widgetClassName} .constructions__custom-default`).textContent;
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-count`).textContent = allCount;
+					document.querySelector(`.${widgetClassName} .constructions__real-select`).selectedIndex = index;
+					selectCustomItems.forEach((selectCustomItem) => selectCustomItem.classList.remove('active'));
+				} else {
+					widget.classList.remove('active');
+					const city = selectCustomItem.firstElementChild.firstElementChild.textContent;
+					const count = selectCustomItem.firstElementChild.lastElementChild.textContent;
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-city`).textContent = city;
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-count`).textContent = count;
+					document.querySelector(`.${widgetClassName} .constructions__real-select`).selectedIndex = index;
+					selectCustomItems.forEach((selectCustomItem) => selectCustomItem.classList.remove('active'));
+					selectCustomItem.classList.add('active');
+				}
+			});
+		});
+	};
+	
+	// selectCustomInit('widget-location');
+
+	const widgetSelects = document.querySelectorAll('.widget-select');
+
+	widgetSelects.forEach((widgetSelect) => {
+		const widgetClassName = widgetSelect.classList[widgetSelect.classList.length - 1];
+		selectCustomInit(widgetClassName);
+	});
+
+	document.querySelectorAll('.constructions__fake-date-start, .constructions__fake-date-end').flatpickr({
+		dateFormat: "d-m-Y",
+		"locale": "ru",
+		onChange: function(selectedDates, dateStr, instance) {
+			const dateStart = document.querySelector('.constructions__fake-date-start').value;
+			const dateEnd = document.querySelector('.constructions__fake-date-end').value;
+		},
+	});
+	/* CUSTOM */
 });

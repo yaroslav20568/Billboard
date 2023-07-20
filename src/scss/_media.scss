@@ -36,7 +36,7 @@
 			width: 22%;
 		}
 	}
-	.catalog, .vacancies {
+	.catalog, .vacancies, .constructions, .search-result {
 		&__left {
 			margin-right: 50px;
 		}
@@ -114,6 +114,22 @@
 			width: 33.33333%;
 		}
 	}
+	.constructions {
+		&__right {
+			filter: none;
+		}
+	}
+	.search-result {
+		&__inner {
+			display: block;
+		}
+		&__left {
+			margin-bottom: 40px;
+		}
+		&__right {
+			width: 100%;
+		}
+	}
 }
 
 @media(max-width: 920px) {
@@ -168,6 +184,18 @@
 		&__close {
 			right: -10px;
 			// top: -10px;
+		}
+	}
+	.constructions {
+		&__inner {
+			align-items: center;
+		}
+		&__left {
+			margin-top: 0;
+			margin-right: 25px;
+		}
+		&__right {
+			height: 500px;
 		}
 	}
 }
@@ -230,6 +258,13 @@
 		// 	}
 		// }
 	}
+	.search-result {
+		&__items {
+			&-head {
+				grid-template-columns: 1.1fr 1.1fr 0.3fr 0.2fr 0.2fr;
+			}
+		}
+	}
 }
 
 @media(max-width: 660px) {
@@ -262,7 +297,7 @@
 		}
 		&__swiper {
 			background: #C4C4C4;
-			box-shadow: -10px 20px 0px 0px #F7F8FA, 0px 10px 50px 0px rgba(0, 0, 0, 0.20);
+			box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.20), -10px 20px 0px 0px #F7F8FA;
 		}
 		&__text {
 			max-width: none;
@@ -308,6 +343,9 @@
 	}
 	.our-partners {
 		transform: translateY(-102px);
+		&--padding {
+			padding-top: 62px;
+		}
 		&__title {
 			margin-bottom: 14px;
 		}
@@ -355,6 +393,54 @@
 	.breadcrumbs {
 		padding: 40px 0 29px;
 	}
+	.constructions {
+		position: relative;
+		&__inner {
+			display: block;
+		}
+		&__left {
+			margin-bottom: 40px;
+		}
+		&__right {
+			width: 100%;
+			height: 396px;
+			box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.20), -10px 20px 0px 0px #F7F8FA;
+		};
+	}
+	.search-result {
+		padding: 165px 0 60px;
+		margin-top: -103px;
+		&__left {
+			margin-right: 0;
+			&-text {
+				max-width: none;
+			}
+		}
+		&__right {
+			&-tag {
+				margin-right: 10px;
+			}
+		}
+		&__items {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media(max-width: 600px) {
+	.search-result {
+		&__right {
+			&-widgets {
+				display: block;
+			}
+			&-tags {
+				flex-wrap: wrap;
+			}
+			&-tag {
+				margin-bottom: 15px;
+			}
+		}
+	}
 }
 
 @media(max-width: 576px) {
@@ -387,6 +473,13 @@
 		// }
 		&__submit {
 			margin-bottom: 32px;
+		}
+	}
+	.search-result {
+		&__items {
+			display: block;
+			overflow-x: scroll;
+			white-space: nowrap;
 		}
 	}
 }
@@ -539,6 +632,13 @@
 	.form {
 		&__btn-call {
 			margin: 0 auto;
+		}
+	}
+	.search-result {
+		&__right {
+			&-title {
+				width: 314px;
+			}
 		}
 	}
 }
