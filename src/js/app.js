@@ -22,8 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			delay: 2000,
 		},
 		pagination: {
-				el: '.intro-slide__navigation',
-				clickable: true
+			el: '.intro-slide__navigation',
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		}
+	});
+
+	const constructionsDescriptionSwiper = new Swiper('.constructions-description__swiper', {
+		speed: 400,
+		// spaceBetween: 100,
+		loop: true,
+		autoplay: {
+			delay: 2000,
+		},
+		pagination: {
+			el: '.constructions-description-slide__navigation',
+			clickable: true
 		},
 		navigation: {
 			nextEl: '.swiper-button-next',
