@@ -404,13 +404,17 @@ body {
 		}
 	}
 	.swiper-pagination-bullet, .swiper-pagination-bullet-active {
-		width: 10px;
-		height: 10px;
+		width: 13px;
+		height: 13px;
 		border: 2px solid $white;
 	}
 	.swiper-pagination-bullet {
 		background-color: $gray2;
 		opacity: 1;
+		margin: 0 19px 0 0 !important;
+		&:last-child {
+			margin: 0 !important;
+		}
 	}
 	.swiper-pagination-bullet-active {
 		background-color: $black;
@@ -423,7 +427,7 @@ body {
 		width: 8px;
 		height: 12px;
     top: auto;
-		bottom: 29px;
+		bottom: 31px;
 	}
 	.swiper-button-prev {
 		left: 25.2%;
@@ -1152,12 +1156,6 @@ body {
 	}
 }
 /* CATALOG */
-
-.no-home {
-	section, footer {
-		transform: none;
-	}
-}
 
 /* VACANCIES */
 .vacancies {
@@ -2070,13 +2068,17 @@ body {
     bottom: 30px !important;
 	}
 	.swiper-pagination-bullet, .swiper-pagination-bullet-active {
-		width: 10px;
-		height: 10px;
+		width: 13px;
+		height: 13px;
 		border: 2px solid $white;
 	}
 	.swiper-pagination-bullet {
 		background-color: $gray2;
 		opacity: 1;
+		margin: 0 19px 0 0 !important;
+		&:last-child {
+			margin: 0 !important;
+		}
 	}
 	.swiper-pagination-bullet-active {
 		background-color: $black;

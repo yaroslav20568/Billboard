@@ -1,4 +1,4 @@
-import { animations } from './functions/animations.js';
+// import { animations } from './functions/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const burgerBtn = document.querySelector('.header__burger');
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			if(!map.classList.contains('active')) {
 				mapBtn.classList.add('active');
 				map.classList.add('active');
-				map.scrollIntoView();
+				// map.scrollIntoView();
 			} else {
 				mapBtn.classList.remove('active');
 				map.classList.remove('active');

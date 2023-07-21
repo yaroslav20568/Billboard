@@ -328,20 +328,22 @@
 		&__btn {
 			margin-bottom: 50px;
 		}
+		.swiper-button-prev {
+			left: 8.2%;
+		}
+		.swiper-button-next {
+			right: 8.2%;
+		}
 	}
 	.our-service {
 		padding-top: 171px;
-		// transform: translateY(-102px);
 		margin-top: -102px;
 		&__head {
 			margin-bottom: 50px;
 		}
 	}
 	.our-amenities {
-		// transform: translateY(-373px);
-		// transform: translateY(-475px);
 		background: linear-gradient(0deg, transparent 62%, $cyan 38%);
-		// transform: translateY(-102px);
 		padding-bottom: 42px;
 		&__inner {
 			display: block;
@@ -365,7 +367,6 @@
 		}
 	}
 	.our-partners {
-		// transform: translateY(-102px);
 		&--padding {
 			padding-top: 62px;
 		}
@@ -384,7 +385,6 @@
 	}
 	.our-contacts {
 		background: linear-gradient(0deg, #0FC1C2 73%, transparent 30%);
-		// transform: translateY(-102px);
 		padding: 71px 0 60px;
 		&__inner {
 			flex-direction: column;
@@ -482,12 +482,6 @@
 		.swiper-button-next {
 			right: 8.2%;
 		}
-	}
-	.footer {
-		// transform: translateY(-102px);
-	}
-	.bottom-map {
-		// transform: translateY(-102px);
 	}
 }
 
