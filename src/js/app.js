@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	/*ACCORDEON*/
+	/* ACCORDEON */
 	const accordeonBtns = document.querySelectorAll('.tab-btn');
 
 	accordeonBtns.forEach(accordeonBtn => {
@@ -64,39 +64,57 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
-	/*ACCORDEON*/
+	/* ACCORDEON */
 
-	/*MODALS*/
-	const introBtn = document.querySelector('.intro__btn');
-	const modal = document.querySelector('.call-modal');
+	/* MODALS */
+	// const modal = document.querySelector('.modal--active');
 	const closeBtns = document.querySelectorAll('.modal__close');
+	const callBtns = document.querySelectorAll('.form__btn-call');
+	const becomeCustomerBtns = document.querySelectorAll('.become-customer__btn');
+	const becomeCustomerModal = document.querySelector('.customer-modal');
+	const callModalBtns = document.querySelectorAll('.call-modal__btn');
+	const callModal = document.querySelector('.call-modal');
 
-	introBtn?.addEventListener('click', () => {
-		modal.classList.add('modal--active');
-		document.body.style.overflow = 'hidden';
+	becomeCustomerBtns.forEach((becomeCustomerBtn) => {
+		becomeCustomerBtn.addEventListener('click', () => {
+			becomeCustomerModal.classList.add('modal--active');
+			document.body.style.overflow = 'hidden';
+		});
 	});
-
-	// modalBtns.forEach(modalBtn => {
-	// 		modalBtn.addEventListener('click', () => {
-	// 				modal.classList.add('modal--active');
-	// 				document.body.style.overflow = 'hidden';
-	// 		});
-	// });
+	callModalBtns.forEach((callModalBtn) => {
+		callModalBtn.addEventListener('click', () => {
+			callModal.classList.add('modal--active');
+			document.body.style.overflow = 'hidden';
+		});
+	});
 
 	closeBtns.forEach((closeBtn) => {
 		closeBtn.addEventListener('click', () => {
-			modal.classList.remove('modal--active');
+			document.querySelector('.modal--active').classList.remove('modal--active');
+			document.body.style.overflow = 'auto';
+		});
+	});
+	callBtns.forEach((closeBtn) => {
+		closeBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.querySelector('.modal--active').classList.remove('modal--active');
 			document.body.style.overflow = 'auto';
 		});
 	});
 
-	modal.addEventListener('click', (e) => {
-			if (e.target.parentElement === modal) {
-					modal.classList.remove('modal--active');
-					document.body.style.overflow = 'auto';
-			}
+	becomeCustomerModal.addEventListener('click', (e) => {
+		if (e.target.parentElement === becomeCustomerModal) {
+			becomeCustomerModal.classList.remove('modal--active');
+			document.body.style.overflow = 'auto';
+		}
 	});
-	/*MODALS*/
+	callModal.addEventListener('click', (e) => {
+		if (e.target.parentElement === callModal) {
+			callModal.classList.remove('modal--active');
+			document.body.style.overflow = 'auto';
+		}
+	});
+	/* MODALS */
 
 	/* ACCORDEONS */
 	const accordeonVacanciesBtns = document.querySelectorAll('.vacancies__accordeon-btn');
@@ -114,6 +132,24 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	/* ACCORDEONS */
 
+	/* MAP */
+	const mapBtns = document.querySelectorAll('.our-contacts__btn');
+	const map = document.querySelector('.bottom-map');
+
+	mapBtns.forEach((mapBtn) => {
+		mapBtn.addEventListener('click', () => {
+			if(!map.classList.contains('active')) {
+				mapBtn.classList.add('active');
+				map.classList.add('active');
+				map.scrollIntoView();
+			} else {
+				mapBtn.classList.remove('active');
+				map.classList.remove('active');
+			}
+		});
+	});
+	/* MAP */
+
 	/* CUSTOM */
 	const selectCustomInit = (widgetClassName) => {
 		const selectOptions = document.querySelectorAll(`.${widgetClassName} .constructions__real-select option`);
@@ -124,20 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		const optionNames = [];
 		selectOptions.forEach((selectOption) => {
-			optionNames.push({city: selectOption.textContent, count: selectOption.getAttribute('data-count')});
+			optionNames.push({param: selectOption.textContent, count: selectOption.getAttribute('data-count')});
 			allCount += +selectOption.getAttribute('data-count');
 		});
 
 		optionNames.forEach((optionName, index) => {
 			if(index === 0) {
 				rootItems.innerHTML +=`
-					<div class="constructions__custom-default">${optionName.city}</div>
+					<div class="constructions__custom-default">${optionName.param}</div>
 				`;
 			} else {
 				rootItems.innerHTML += `
 					<div class="constructions__custom-item">
 						<div class="constructions__custom-item-inner">
-							<h6 class="constructions__custom-item-title">${optionName.city}</h6>
+							<h6 class="constructions__custom-item-title">${optionName.param}</h6>
 							<div class="constructions__custom-item-count">${optionName.count}</div>
 						</div>
 					</div>
@@ -166,15 +202,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			selectCustomItem.addEventListener('click', () => {
 				if(index === 0) {
 					widget.classList.remove('active');
-					document.querySelector(`.${widgetClassName} .constructions__custom-select-city`).textContent = document.querySelector(`.${widgetClassName} .constructions__custom-default`).textContent;
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-param`).textContent = document.querySelector(`.${widgetClassName} .constructions__custom-default`).textContent;
 					document.querySelector(`.${widgetClassName} .constructions__custom-select-count`).textContent = allCount;
 					document.querySelector(`.${widgetClassName} .constructions__real-select`).selectedIndex = index;
 					selectCustomItems.forEach((selectCustomItem) => selectCustomItem.classList.remove('active'));
 				} else {
 					widget.classList.remove('active');
-					const city = selectCustomItem.firstElementChild.firstElementChild.textContent;
+					const param = selectCustomItem.firstElementChild.firstElementChild.textContent;
 					const count = selectCustomItem.firstElementChild.lastElementChild.textContent;
-					document.querySelector(`.${widgetClassName} .constructions__custom-select-city`).textContent = city;
+					document.querySelector(`.${widgetClassName} .constructions__custom-select-param`).textContent = param;
 					document.querySelector(`.${widgetClassName} .constructions__custom-select-count`).textContent = count;
 					document.querySelector(`.${widgetClassName} .constructions__real-select`).selectedIndex = index;
 					selectCustomItems.forEach((selectCustomItem) => selectCustomItem.classList.remove('active'));
@@ -193,7 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		selectCustomInit(widgetClassName);
 	});
 
-	document.querySelectorAll('.constructions__fake-date-start, .constructions__fake-date-end').flatpickr({
+	const widgetDate = document.querySelectorAll('.constructions__fake-date-start, .constructions__fake-date-end');
+
+	widgetDate.flatpickr({
 		dateFormat: "d-m-Y",
 		"locale": "ru",
 		onChange: function(selectedDates, dateStr, instance) {

@@ -331,7 +331,8 @@
 	}
 	.our-service {
 		padding-top: 171px;
-		transform: translateY(-102px);
+		// transform: translateY(-102px);
+		margin-top: -102px;
 		&__head {
 			margin-bottom: 50px;
 		}
@@ -340,7 +341,7 @@
 		// transform: translateY(-373px);
 		// transform: translateY(-475px);
 		background: linear-gradient(0deg, transparent 62%, $cyan 38%);
-		transform: translateY(-102px);
+		// transform: translateY(-102px);
 		padding-bottom: 42px;
 		&__inner {
 			display: block;
@@ -364,7 +365,7 @@
 		}
 	}
 	.our-partners {
-		transform: translateY(-102px);
+		// transform: translateY(-102px);
 		&--padding {
 			padding-top: 62px;
 		}
@@ -383,7 +384,7 @@
 	}
 	.our-contacts {
 		background: linear-gradient(0deg, #0FC1C2 73%, transparent 30%);
-		transform: translateY(-102px);
+		// transform: translateY(-102px);
 		padding: 71px 0 60px;
 		&__inner {
 			flex-direction: column;
@@ -482,6 +483,12 @@
 			right: 8.2%;
 		}
 	}
+	.footer {
+		// transform: translateY(-102px);
+	}
+	.bottom-map {
+		// transform: translateY(-102px);
+	}
 }
 
 @media(max-width: 600px) {
@@ -502,7 +509,6 @@
 
 @media(max-width: 576px) {
 	.footer {
-		transform: translateY(-102px);
 		&__top {
 			display: block;
 			padding: 70px 0 54px;
@@ -658,7 +664,7 @@
 		}
 	}
 	.our-service {
-		padding: 62px 0 54px;
+		padding: 171px 0 54px;
 	}
 	.our-amenities {
 		&__left {
